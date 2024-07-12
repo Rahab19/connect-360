@@ -1,0 +1,9 @@
+<section>
+    <h2>Recent Incidents</h2>
+    <ul>
+      <li *ngFor="let incident of recentIncidents">
+        {{ incident.title }} - Status: {{ incident.status }}
+      </li>
+    </ul>
+    <a routerLink="/report-incident">Report New Incident</a>
+  </section>

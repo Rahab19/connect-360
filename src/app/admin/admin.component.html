@@ -1,1 +1,53 @@
-<p>admin works!</p>
+<div class="nav">
+    <ul class="nav-links">
+        <li><a routerLink="/profile">Profile</a></li>
+        <li><a routerLink="/logout">Logout</a></li>
+      </ul>
+  
+  </div>
+<div class="admin-dashboard">
+    <h1>Admin Dashboard</h1>
+  
+    <section class="pending-officials">
+      <h2>Pending Officials</h2>
+      <div class="official-list">
+        <div *ngFor="let official of pendingOfficials" class="official-item">
+          <div class="official-info">
+            <h3>{{ official.name }}</h3>
+            <p>{{ official.email }}</p>
+          </div>
+          <div class="official-actions">
+            <button (click)="approveOfficial(official.id)" class="approve-btn">Approve</button>
+            <button (click)="rejectOfficial(official.id)" class="reject-btn">Reject</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="user-management">
+      <h2>User Management</h2>
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            
+            <th>Action</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUsers">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            
+            
+            <td>
+              <button (click)="deleteUser(user.id)" class="delete-btn">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+  

@@ -1,0 +1,37 @@
+<app-official></app-official>
+
+
+<div class="feedback-management">
+    <h1>Citizen Feedback Management</h1>
+    
+    <div class="category-filter">
+      <button *ngFor="let category of categories" 
+              [class.active]="category === selectedCategory"
+              (click)="onCategoryChange(category)">
+        {{ category }}
+      </button>
+    </div>
+  
+    <div class="feedback-list">
+      <div *ngFor="let feedback of filteredFeedbackList" class="feedback-item">
+        <div class="feedback-header">
+          <h2>{{ feedback.title }}</h2>
+         
+        </div>
+        <p class="description">{{ feedback.description }}</p>
+        <!-- <div class="feedback-meta">
+          
+          <span class="date">{{ feedback.date | date:'medium' }}</span>
+        </div> -->
+        <div class="feedback-actions">
+          <!-- <button (click)="summarizeFeedback(feedback.id)" class="summarize-btn">
+            <i class="fas fa-robot"></i> AI Summary
+          </button> -->
+          <button (click)="respondToFeedback(feedback.id)" class="respond">Respond</button>
+         
+          <button (click)="deleteFeedback(feedback.id)" class="delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

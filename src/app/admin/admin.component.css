@@ -1,0 +1,114 @@
+.nav{
+    background-color: rgb(19, 19, 100);
+    color: white;
+    display:flex;
+    justify-content: flex-end;
+    padding: 10px;
+    
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    
+  }
+  nav-links li {
+    margin-left: 30px;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 10px;
+  }
+  
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+.admin-dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2 {
+    color: #333;
+  }
+  
+  .pending-officials, .user-management {
+    margin-bottom: 40px;
+  }
+  
+  .official-list {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .official-item {
+    background-color: hsl(246, 57%, 33%);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .official-info h3 {
+    margin: 0 0 5px 0;
+    color: white;
+  }
+  
+  .official-info p {
+    margin: 0;
+    color: #f3eded;
+  }
+  
+  .official-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .approve-btn, .reject-btn, .delete-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .approve-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .reject-btn, .delete-btn {
+    background-color: #F44336;
+    color: white;
+  }
+  
+  .approve-btn:hover { background-color: #45a049; }
+  .reject-btn:hover, .delete-btn:hover { background-color: #d32f2f; }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .user-table tr:hover {
+    background-color: #f5f5f5;
+  }
+  

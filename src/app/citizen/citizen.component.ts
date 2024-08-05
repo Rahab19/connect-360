@@ -5,23 +5,25 @@ import { IncidentService } from '../services/incident.service';
 import { FeedbackService } from '../services/feedback.service';
 import { PollService } from '../services/poll.service';
 import { EducateService } from '../services/educate.service';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { routes } from '../app.routes';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-citizen',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,RouterLink],
   templateUrl: './citizen.component.html',
   styleUrl: './citizen.component.css'
 })
 export class CitizenComponent {
+
+  // constructor(private router:Router){ }
   // educate:Educate[] = []
   // feedback:Feedback[] = []
   // activePolls: Poll[] = []
   // recentIncidents: Incident[] = []
   
-
-
-  // constructor ( privateIncidentService:IncidentService, privatefeedback:FeedbackService,privatePolls: PollService,privateeducate:EducateService) { }
 
   // ngOnInit(): void {
   //   this.Loadeducate()

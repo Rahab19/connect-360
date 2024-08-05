@@ -1,0 +1,26 @@
+<app-citizen></app-citizen>
+<div class="polls-container">
+    <h2>Polls</h2>
+    <div class="polls-list">
+      <div *ngFor="let poll of activePolls" class="poll-card">
+        <h3>{{ poll.question }}</h3>
+        <div class="poll-options">
+          <div class="option">
+            <div class="progress-bar">
+              <div class="progress" [style.width]="calculatePercentage(poll.yesVotes, poll.yesVotes + poll.noVotes) + '%'"></div>
+            </div>
+            <span class="vote-count">{{ poll.yesVotes }}</span>
+            <button (click)="submitVote(poll.id, 'yes')" [class.voted]="poll.userVote === 'yes'">Yes</button>
+          </div>
+          <div class="option">
+            <div class="progress-bar">
+              <div class="progress" [style.width]="calculatePercentage(poll.noVotes, poll.yesVotes + poll.noVotes) + '%'"></div>
+            </div>
+            <span class="vote-count">{{ poll.noVotes }}</span>
+            <button (click)="submitVote(poll.id, 'no')" [class.voted]="poll.userVote === 'no'">No</button>
+          </div>
+        </div>
+        <p class="total-votes">Total votes: {{ poll.yesVotes + poll.noVotes }}</p>
+      </div>
+    </div>
+  </div>

@@ -1,5 +1,18 @@
-<section>
-    <h2>Education Center</h2>
-    <p>Learn about government documents and processes.</p>
-    <a routerLink="/education">Explore Education Center</a>
-  </section>
+<app-citizen></app-citizen>
+
+<div class="documents-container">
+  <h2>Documents</h2>
+  <div class="document-grid">
+    <div *ngFor="let doc of documents" class="document-card" (click)="openDocument(doc.url)">
+      <div class="pdf-icon">
+        <i class="fas fa-file-pdf"></i>
+      </div>
+      <div class="document-info">
+        <h3>{{ doc.name }}</h3>
+        <button (click)="summarizeDocument(doc, $event)" class="summarize-btn">
+          <i class="fas fa-robot"></i> AI Summary
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

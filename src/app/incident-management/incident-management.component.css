@@ -1,0 +1,103 @@
+/* src/app/components/Incident-management/Incident-management.component.css */
+.Incident-management {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .category-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .category-filter button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .category-filter button.active {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .Incident-list {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .Incident-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .Incident-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .Incident-header h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .status.pending { background-color: #FFC107; color: #000; }
+  .status.in-progress { background-color: #2196F3; color: #fff; }
+  .status.resolved { background-color: #4CAF50; color: #fff; }
+  
+  .description {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  .Incident-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 10px;
+  }
+  
+  .Incident-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .Incident-actions button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .summarize { background-color: #9C27B0; color: white; }
+  .respond { background-color: #2196F3; color: white; }
+  .resolve { background-color: #4CAF50; color: white; }
+  .delete { background-color: #F44336; color: white; }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  

@@ -1,0 +1,53 @@
+div class="poll-management">
+    <h1>Poll Management</h1>
+    
+    <button class="create-poll-btn" (click)="createPoll()">Create New Poll</button>
+  
+    <div class="poll-section">
+      <h2>Active Polls</h2>
+      <div class="poll-list">
+        <div *ngFor="let poll of activePolls" class="poll-item">
+          <div class="poll-header">
+            <h3>{{ poll.question }}</h3>
+            <div class="poll-actions">
+              <button (click)="editPoll(poll.id)" class="edit-btn">Edit</button>
+              <button (click)="deletePoll(poll.id)" class="delete-btn">Delete</button>
+            </div>
+          </div>
+          <div class="poll-dates">
+            <span>Opened: {{ poll.startDate | date:'mediumDate' }}</span>
+            <span>Closes: {{ poll.endDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="poll-options">
+            <div *ngFor="let option of poll.options" class="option">
+              {{ option }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="poll-section">
+      <h2>Poll Results</h2>
+      <div class="poll-list">
+        <div *ngFor="let poll of closedPolls" class="poll-item">
+          <div class="poll-header">
+            <h3>{{ poll.question }}</h3>
+            <button (click)="deletePoll(poll.id)" class="delete-btn">Delete</button>
+          </div>
+          <div class="poll-dates">
+            <span>Opened: {{ poll.startDate | date:'mediumDate' }}</span>
+            <span>Closed: {{ poll.endDate | date:'mediumDate' }}</span>
+          </div>
+          <div class="poll-results">
+            <!-- <div *ngFor="let option of poll.options" class="result-bar">
+              <div class="bar" [style.width]="(poll.results[option] / getTotalVotes() * 100) + '%'"></div>
+              <span class="option-text">{{ option }}: {{ poll.results[option] }} votes</span>
+            </div> -->
+          </div>
+          <button (click)="viewResults(poll)" class="view-results-btn">View Detailed Results</button>
+        </div>
+      </div>
+    </div>
+  
+  

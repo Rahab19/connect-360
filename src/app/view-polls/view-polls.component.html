@@ -1,9 +1,0 @@
-<section>
-    <h2>Active Polls</h2>
-    <ul>
-      <li *ngFor="let poll of activePolls">
-        {{ poll.question }}, {{poll.option}}, (Ends: {{ poll.endDate }})
-      </li>
-    </ul>
-    <a routerLink="/polls">View All Polls</a>
-  </section>

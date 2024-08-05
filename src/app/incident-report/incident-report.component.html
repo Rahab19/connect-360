@@ -1,9 +1,37 @@
-<section>
-    <h2>Recent Incidents</h2>
-    <ul>
-      <li *ngFor="let incident of recentIncidents">
-        {{ incident.title }} - Status: {{ incident.status }}
-      </li>
-    </ul>
-    <a routerLink="/report-incident">Report New Incident</a>
-  </section>
+<app-citizen></app-citizen>
+<div class="incident-report-container">
+  <h2>Report an Incident</h2>
+  <form [formGroup]="incidentForm" (ngSubmit)="submitIncident()">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" formControlName="title" placeholder="Enter incident title">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" placeholder="Describe the incident"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="reportedBy">Location</label>
+      <input type="text" id="reportedBy" formControlName="reportedBy" placeholder="Enter incident reportedBy">
+    </div>
+    <div class="form-group">
+      <label for="media">Upload Media</label>
+      <input type="file" id="media" (change)="onFileSelected($event)" multiple>
+    </div>
+    <button type="submit" [disabled]="!incidentForm.valid">Submit Report</button>
+  </form>
+
+  <h2>Recent Incidents</h2>
+  <div class="incident-list">
+    <div *ngFor="let incident of incidents" class="incident-card">
+      <h3>{{ incident.Title }}</h3>
+      <p><strong>Reported by:</strong> {{ incident.reportedBy }}</p>
+      
+      <p><strong>Status:</strong> {{ incident.status }}</p>
+      <p>{{ incident.Description }}</p>
+      <div class="media-preview" *ngIf="incident.MediaUrl.length > 0">
+        <img *ngFor="let url of incident.MediaUrl" [src]="url" alt="Incident media">
+      </div>
+    </div>
+  </div>
+</div>

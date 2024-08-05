@@ -1,0 +1,106 @@
+.polls-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .polls-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .poll-card {
+    background-color: hsl(236, 56%, 21%);
+    
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .poll-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .option  {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  .option:first-child .progress {
+    background-color: #4CAF50; /* Green for Yes */
+  }
+  
+  .option:last-child .progress {
+    background-color: #F44336; /* Red for No */
+  }
+  .progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .progress {
+    height: 100%;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+  }
+  
+  .vote-count {
+    min-width: 30px;
+    text-align: right;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  button {
+    padding: 5px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  button.voted {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  
+  .total-votes {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #e6baba;
+    text-align: right;
+  }
+  
+  
+
+
+  
+  
+  
+  

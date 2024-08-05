@@ -1,0 +1,89 @@
+.nav{
+  background-color: rgb(19, 19, 100);
+  color: white;
+  display:flex;
+  justify-content: space-between;
+}
+
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0 30px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+  color: red;
+}
+.documents-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .document-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .document-card {
+    background-color: hsl(0, 37%, 97%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .document-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .pdf-icon {
+    font-size: 48px;
+    color: #F40F02;
+    margin-bottom: 10px;
+  }
+  .document-info h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .summarize-btn {
+    background-color: hwb(327 9% 43%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  .summarize-btn:hover {
+    background-color: #1976D2;
+  }
+  
+  .summarize-btn i {
+    font-size: 14px;
+  }

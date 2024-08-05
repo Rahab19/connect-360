@@ -1,0 +1,26 @@
+<app-official></app-official>
+<div class="Incident-management">
+  <h1>Citizen Incident Management</h1>
+
+  <div class="Incident-list">
+    <div *ngFor="let Incident of filteredincidentList" class="Incident-item">
+      <div class="Incident-header">
+        <h2>{{ Incident.title }}</h2>
+        <span class="status" [class]="Incident.status">{{ Incident.status }}</span>
+      </div>
+      <p class="description">{{ Incident.description }}</p>
+      <div class="Incident-meta">
+        <span class="category">{{ Incident.category }}</span>
+        <span class="date">{{ Incident.date | date:'medium' }}</span>
+      </div>
+      <div class="Incident-actions">
+        <!-- <button (click)="summarizeIncident(Incident.id)" class="summarize">Summarize</button> -->
+        <button (click)="respondToIncident(Incident.id)" class="respond">Respond</button>
+        <button (click)="markAsResolved(Incident.id)" class="resolve" [disabled]="Incident.status === 'resolved'">
+          Mark as Resolved
+        </button>
+        <button (click)="deleteIncident(Incident.id)" class="delete">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
